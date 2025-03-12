@@ -1,11 +1,20 @@
-import "bootstrap";
-import "./style.css";
+let who=['el perro', 'el gato', 'el raton'];
+let what=['se lo comió', 'lo rompió', 'lo robó'];
+let when=['por la mañana', 'al mediodía', 'por la tarde'];
+let express=['guau', 'miau', '....']
+function generador() {
+    let whoRandom= who[Math.floor(Math.random()*who.length)];
+    let whatRandom= what[Math.floor(Math.random()*what.length)];
+    let whenRandom= when[Math.floor(Math.random()*when.length)];
+    let expressRandom= express[Math.floor(Math.random()*express.length)]
 
-
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
-
+    return `<p> ${whoRandom} ${whatRandom} ${whenRandom} ${expressRandom}</p>`
+}
 window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
-};
+    const text=generador()
+    console.log(text);
+  const container= document.getElementById('container')
+  container.innerHTML=text
+     }
+
+
